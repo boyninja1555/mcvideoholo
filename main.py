@@ -5,8 +5,8 @@ import cv2
 
 INPUT_FILE = "input.mp4"
 OUTPUT_DIR = "output"
-WIDTH = 32
-HEIGHT = 18
+WIDTH = 64
+HEIGHT = 36
 
 if not os.path.isfile(INPUT_FILE):
     print(f"{INPUT_FILE} is missing!")
@@ -58,6 +58,7 @@ def frame_to_compressed_lines(frame):
 
         lines.append(components)
 
+    lines.reverse()
     return lines
 
 
@@ -78,7 +79,7 @@ with (
     cleanup.write("# Cleanup\n")
     for i in range(HEIGHT):
         setup.write(
-            f'summon armor_stand ~ ~{"" if i == 0 else i} ~ {{Tags:["mcvideo{i}"],NoGravity:true}}\n'
+            f'summon armor_stand ~ ~{"" if i == 0 else i * 0.25} ~ {{Tags:["mcvideo{i}"],NoGravity:true,CustomNameVisible:true}}\n'
         )
 
         cleanup.write(f"kill @e[type=armor_stand,tag=mcvideo{i}]\n")
