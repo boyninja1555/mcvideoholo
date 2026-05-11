@@ -1,7 +1,7 @@
 import sys
 import os
-import cv2
 import json
+import cv2
 
 INPUT_FILE = "input.mp4"
 OUTPUT_DIR = "output"
