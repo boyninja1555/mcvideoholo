@@ -26,16 +26,16 @@ def resize(frame):
     return cv2.resize(frame, (WIDTH, HEIGHT), interpolation=cv2.INTER_AREA)
 
 
-def rgb_to_hex(r, g, b):
+def rgb_to_hex(r: int, g: int, b: int) -> str:
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
-def pixel_color(bgr):
+def pixel_color(bgr: tuple[int, int, int]) -> str:
     b, g, r = bgr
     return rgb_to_hex(r, g, b)
 
 
-def frame_to_compressed_lines(frame):
+def frame_to_compressed_lines(frame) -> list:
     lines = []
     for y in range(HEIGHT):
         row = frame[y]
@@ -62,7 +62,7 @@ def frame_to_compressed_lines(frame):
     return lines
 
 
-def json_line(line):
+def json_line(line: dict) -> str:
     return json.dumps(line, separators=(",", ":"))
 
 
