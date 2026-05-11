@@ -1,3 +1,5 @@
+> **Warning!** I am not an experienced datapack developer. I do, however, know like 8 general purpose programming languages and most Minecraft commands, so I randomly decided to make a new Python file, open [minecraft.wiki](https://minecraft.wiki), and convert some video to holograms. Beware of unoptimized and **bad** code!
+
 <div align="center">
     <h1>mcvideoholo</h1>
 </div>
