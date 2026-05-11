@@ -1,0 +1,12 @@
+input.mp4
+output.mcfunction
+
+### Python ###
+venv/
+.venv/
+*.pyc
+
+### IDEs ###
+.idea/
+.vscode/
+.DS_Store
