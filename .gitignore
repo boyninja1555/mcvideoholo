@@ -1,5 +1,5 @@
 input.mp4
-output.mcfunction
+output/
 
 ### Python ###
 venv/
