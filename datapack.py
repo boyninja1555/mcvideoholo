@@ -5,6 +5,7 @@ import json
 
 FUNCTIONS_DIR = "output"
 OUTPUT_DIR = "datapack"
+PACK_NAMESPACE = "mcvideoholo"
 PACK_MCMETA = json.dumps(
     {
         "pack": {
@@ -28,8 +29,17 @@ os.makedirs(OUTPUT_DIR)
 with open(os.path.join(OUTPUT_DIR, "pack.mcmeta"), "w") as f:
     f.write(PACK_MCMETA)
 
-shutil.copytree(
-    FUNCTIONS_DIR, os.path.join(OUTPUT_DIR, "data", "mcvideoholo", "function")
-)
+funcdir = os.path.join(OUTPUT_DIR, "data", PACK_NAMESPACE, "function")
+shutil.copytree(FUNCTIONS_DIR, funcdir)
+
+with open(os.path.join(funcdir, "tick.mcfunction"), "w", encoding="utf-8") as f:
+    f.write("# Play loop\n")
+    funcfiles = os.listdir(funcdir)
+    funcfiles.sort()
+    for filename in funcfiles:
+        if not filename.startswith("f"):
+            continue
+
+        f.write(f"function {PACK_NAMESPACE}:{filename.replace('.mcfunction', '')}\n")
 
 print(f"Done! Created Minecraft 26.1.2 datapack at {OUTPUT_DIR}/")
