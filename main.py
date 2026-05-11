@@ -79,7 +79,7 @@ with (
     cleanup.write("# Cleanup\n")
     for i in range(HEIGHT):
         setup.write(
-            f'summon armor_stand ~ ~{"" if i == 0 else i * 0.25} ~ {{Tags:["mcvideo{i}"],NoGravity:true,CustomNameVisible:true}}\n'
+            f'summon armor_stand ~ ~{"" if i == 0 else i * 0.25} ~ {{Tags:["mcvideo{i}"],NoGravity:true,Invisible:true,CustomNameVisible:true}}\n'
         )
 
         cleanup.write(f"kill @e[type=armor_stand,tag=mcvideo{i}]\n")
