@@ -3,7 +3,7 @@ import os
 import shutil
 import json
 
-TICKS_PER_FRAME = 5
+TICKS_PER_FRAME = 1
 FUNCTIONS_DIR = "output"
 OUTPUT_DIR = "datapack"
 PACK_NAMESPACE = "mcvideoholo"
